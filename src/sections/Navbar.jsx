@@ -16,10 +16,10 @@ export const Navbar = () =>{
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <header className="fixed top-0 left-0 right-0 py-6">
+        <header className="fixed top-0 left-6 right-0 py-6">
             <nav className="container flex items-center px-7 mx-auto justify-between">
                 {/*schiaccio cambia tema sito?*/}
-                <a href="#" className="text-xl font-bold">LOGO</a>
+                <a href="#" className="text-3xl font-bold">LOGO</a>
 
                 {/*Desktop*/}
                 
@@ -28,7 +28,7 @@ export const Navbar = () =>{
                         <a 
                         key={index} 
                         href={button.href} 
-                        className=" px-6 hover:scale-130 duration-300" >
+                        className=" text-xl px-6 hover:text-bold hover:text-primary hover:scale-130 duration-300" >
                             {button.label}
                         </a>
                     ))}
@@ -47,7 +47,7 @@ export const Navbar = () =>{
                             <a 
                             key={index} 
                             href={button.href} 
-                            className=" px-6 hover:scale-130 duration-300" >
+                            className=" px-6 hover:text-bold hover:text-primary hover:scale-130 duration-300" >
                                 {button.label}
                             </a>
                         ))}
