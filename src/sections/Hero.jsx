@@ -1,3 +1,4 @@
+import Star from "../components/Star"
 
 
 export const Hero = () =>{
@@ -16,21 +17,23 @@ export const Hero = () =>{
                     ★
                 </div>
             ))}
-
-        <div className="container mx-auto p-16 relative z-10">
+        <div className=" z-1000">
+        <Star />
+        </div>
+        <div className="z-10 p-16 flex justify-between items-center">
             <div className="fixed bottom-16">
                 <p className="text-6xl">
                     Hello World!
                 </p>
-                <h1 className="text-9xl font-bold mb-4 mt-4">
-                    I'm Gaia
+                <h1 className="flex text-9xl font-bold mb-4 mt-4">
+                    I'm <h1 className=" ml-8 text-primary"> Gaia</h1>
                 </h1>
                 <p className="text-6xl">
                     and I love creating things
                 </p>
             </div>
-            <div id="stars">
-
+            <div className="flex flex-end items-end">
+             
             </div>
         </div>
         </div>
