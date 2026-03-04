@@ -9,7 +9,7 @@ const areas = [
  
 export const Me = () =>{
     return <section id="me">
-        <div className="container min-h-screen flex items-center pt-12 px-12 mx-auto overflow-hidden">
+        <div className="container min-h-screen flex items-center pt-20 px-12 mx-auto overflow-hidden">
             <div className="grid lg:grid-cols-2 gap-6">
                 <div>
                     <div className="text-xl text-primary text-bold mb-4 uppercase">
