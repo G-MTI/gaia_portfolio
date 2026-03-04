@@ -8,7 +8,7 @@ import { Contact } from "@/sections/Contact"
 
 function App() {
   return (
-    <div>
+    <div className="min-h-screen overflow-x-hidden ">
       <Navbar />
       <main>
         <Hero />

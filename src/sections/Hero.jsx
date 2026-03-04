@@ -2,7 +2,7 @@ import Star from "../components/Star"
 
 
 export const Hero = () =>{
-    return <section>
+    return <section className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
             {[...Array(30)].map((_, i) => (
                 <div
@@ -17,11 +17,13 @@ export const Hero = () =>{
                     ★
                 </div>
             ))}
-        <div className=" z-1000">
-        <Star />
+
+        {/*Desktop*/}
+        <div className="hidden md:flex justify-between items-center">
+            <div className="absolute hidden md:flex pointer-events-none">
+            <Star />
         </div>
-        <div className="z-10 p-16 flex justify-between items-center">
-            <div className="fixed bottom-16">
+            <div className="min-h-screen flex flex-col justify-center items-start mt-20 ml-16">
                 <p className="text-6xl">
                     Hello World!
                 </p>
@@ -32,8 +34,20 @@ export const Hero = () =>{
                     and I love creating things
                 </p>
             </div>
-            <div className="flex flex-end items-end">
-             
+        </div>
+
+        {/*Mobile*/}
+        <div className="min-h-screen flex md:hidden justify-center items-center">
+            <div className=" ">
+                <p className="text-3xl">
+                    Hello World!
+                </p>
+                <h1 className="flex text-6xl font-bold">
+                    I'm <h1 className=" ml-6 text-primary"> Gaia</h1>
+                </h1>
+                <p className="text-3xl">
+                    and I love creating things
+                </p>
             </div>
         </div>
         </div>

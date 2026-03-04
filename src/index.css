@@ -11,6 +11,7 @@
 
   --color-highlight: #f5a623; 
   --color-surface: #la2329;
+  --color-border: #333333;
 }
 
 @layer base{
@@ -36,10 +37,21 @@
 
 @layer components {
   .glass {
-    background-color: color-mix(in srgb, var(--color-surface) 80%, transparent);
+    background-color: color-mix(in srgb, var(--color-primary) 80%, transparent);
     backdrop-filter: blur(20px);
     border: 1px solid color-mix(in srgb, var(--color-border) 65%, transparent);
   }
+  .glass-light {
+    background-color: color-mix(in srgb, var(--color-primary) 50%, transparent);
+    backdrop-filter: blur(20px);
+    border: 1px solid color-mix(in srgb, var(--color-border) 65%, transparent);
+  }
+
+  .glass-transparent {
+    background-color: color-mix(in srgb, var(--color-transparent) 50%, transparent);
+    backdrop-filter: blur(20px);
+   }
+
 }
 
 @layer utilities {
