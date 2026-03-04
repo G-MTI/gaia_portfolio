@@ -32,7 +32,7 @@ export const Navbar = () =>{
         <header className={` fixed top-0 left-0 right-0 py-6 ${isScrolled ? "glass-transparent" : "bg-transparent"} z-50`}>
             <nav className="max-w-screen container flex items-center left-0 px-12 right-0 top-0 justify-between mx-auto">
                 {/*schiaccio cambia tema sito?*/}
-                <a href="#" className="text-3xl font-bold">LOGO</a>
+                <a href="#" className="text-3xl font-bold">GM<span className="text-primary">.</span></a>
 
                 {/*Desktop*/}
                 
