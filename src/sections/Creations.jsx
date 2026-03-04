@@ -51,7 +51,7 @@ export const Creations = () =>{
  
     <div className="container mx-auto px-12 relative z-10">
         <div className="text-center text-xl text-primary text-bold mb-4 uppercase mx-auto mb-12">
-            <h2>My latest projects that</h2>
+            <h2>My latest projects</h2>
         </div>
         <div className="grid md:grid-cols-2 gap-6">
             {creations.map((creation, idx) => (
