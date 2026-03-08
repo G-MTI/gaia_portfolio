@@ -7,8 +7,6 @@ import { useState, useEffect } from "react";
 const NavButton = [
     {href: "#me", label: "Me"},
     {href: "#creations", label: "Creations"},
-    {href: "#experience", label: "Experience"},
-    {href: "#contact", label: "Contact"}
 ] 
 
 export const Navbar = () =>{
