@@ -2,7 +2,7 @@ import { Code2} from "lucide-react"
 
 const areas = [
     {icon: Code2, title: "Tech", description: "I spend a lot of time learning new tools, I like designing websites and creating small robots"},
-    {icon: Code2, title: "Art", description: "I love drawing, painting, and 3d modeling, art allows me to express myself."},
+    {icon: Code2, title: "Art", description: "I love drawing, painting, and 3D modeling, art allows me to express myself."},
     {icon: Code2, title: "Sports", description: "I like running, going to the gym, and playing tennis. In general, I love any outdoor activity."},
     {icon: Code2, title: "Finance", description: "I'm interested in personal finance and investment strategies"},
 ] 
