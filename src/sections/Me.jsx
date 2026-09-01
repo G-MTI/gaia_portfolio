@@ -1,4 +1,5 @@
 import { Code2} from "lucide-react"
+import { Link } from "react-router-dom"
 
 const areas = [
     {icon: Code2, title: "Tech", description: "I spend a lot of time learning new tools, I like designing websites and creating small robots"},
@@ -16,7 +17,11 @@ export const Me = () =>{
                         About Me
                     </div>
                     <div>
-                        I'm a last year student in high school with a passion for technology and art. I love combining the two by creating things. I'm interested in economics and science, and I also love drawing, sports, and traveling: activities that inspire my creativity and help me approach problems with curiosity and new perspectives.
+                        I'm a 19-year-old from Italy with a passion for technology and art. I love combining the two by creating things. I'm currently studying Computer Engineering at Roma Tre University, while open-sourcing my degree through 
+                        <Link to="/atlas" className="text-primary hover:underline m-1">
+                             Atlas.
+                        </Link>
+                         I also enjoy working on personal projects, where I can experiment with new ideas, learn unfamiliar technologies, and turn what I learn into something real.
                     </div>
                 </div>
                 <div className="grid sm:grid-cols-2 gap-6">
