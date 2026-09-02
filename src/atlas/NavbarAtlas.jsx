@@ -3,7 +3,8 @@ import { Button } from "@/components/Button";
 import { Menu } from "lucide-react";
 import { X } from "lucide-react";
 import { useState, useEffect } from "react";
-import {Link} from "react-router-dom";
+
+import { Link, Outlet, useLocation } from "react-router-dom"
 
 const NavButton = [
     {href: "#me", label: "Library"},

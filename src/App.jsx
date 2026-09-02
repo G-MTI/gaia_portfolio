@@ -11,6 +11,13 @@ import { Contact } from "@/sections/Contact"
 
 import { NavbarAtlas } from "@/atlas/NavbarAtlas"
 
+import { AdminLayout } from "@/admin/AdminLayout"
+import { Dashboard } from "@/admin/Dashboard"
+import { Login } from "@/admin/Login"
+import { ProtectedRoute } from "@/admin/ProtectedRoute"
+import { Articles } from "@/admin/Articles"
+import { ArticleEditor } from "@/admin/ArticleEditor"
+
 // Carichiamo Atlas solo quando serve
 const Home = lazy(() => import("@/atlas/Home").then(module => ({
   default: module.Home
@@ -84,6 +91,54 @@ function App() {
           </div>
         }
       />
+
+      {/* ADMIN */}
+
+      <Route 
+        path="/admin/login" 
+        element={
+          <Login />
+        }
+      />
+
+      <Route
+        element={
+          <ProtectedRoute />
+        }
+      >
+        <Route
+          path="/admin"
+          element={
+            <AdminLayout />
+          }
+        >
+          <Route
+          index
+          element={
+            <Dashboard />
+          }
+          />
+
+          <Route 
+          path="articles" 
+          element={
+            <Articles />
+          } />
+
+          <Route 
+            path="articles/new"
+            element={
+              <ArticleEditor />
+            } />
+
+         <Route 
+          path="articles/:id"
+          element={
+            <ArticleEditor />
+          }/>
+
+        </Route>
+      </Route>
 
     </Routes>
 
