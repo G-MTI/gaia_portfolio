@@ -4,6 +4,17 @@ import { Link, useNavigate, useParams } from "react-router-dom"
 
 import { supabase } from "@/lib/supabase"
 
+const createSlug = (text) => {
+  return text
+    .toLowerCase()
+    .trim()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
+}
+
 export const ArticleEditor = () => {
 
   const { id } = useParams()
@@ -15,6 +26,7 @@ export const ArticleEditor = () => {
   const [excerpt, setExcerpt] = useState("")
   const [content, setContent] = useState("")
   const [publishedAt, setPublishedAt] = useState("")
+  const [number, setNumber] = useState(null)
 
   const [loading, setLoading] = useState(isEditing)
   const [saving, setSaving] = useState(false)
@@ -51,6 +63,7 @@ export const ArticleEditor = () => {
         return
       }
 
+      setNumber(data.number)
       setTitle(data.title ?? "")
       setExcerpt(data.excerpt ?? "")
       setContent(data.content ?? "")
@@ -88,6 +101,7 @@ export const ArticleEditor = () => {
 
     const articleData = {
       title,
+      slug: createSlug(title),
       excerpt,
       content,
       published_at: publishedAt
@@ -166,7 +180,7 @@ export const ArticleEditor = () => {
 
         {isEditing && (
           <Link
-            to={`/atlas/articles/${id}`}
+            to={`/atlas/articles/${number}`}
             className="text-sm text-white/40 transition hover:text-white"
           >
             Visualizza →
@@ -199,6 +213,12 @@ export const ArticleEditor = () => {
           />
 
         </div>
+
+        {isEditing && number !== null && (
+  <p className="mt-2 text-sm text-white/40">
+    N° {String(number).padStart(4, "0")}
+  </p>
+)}
 
 
         {/* Excerpt */}
@@ -243,12 +263,11 @@ export const ArticleEditor = () => {
             rows={24}
             className="w-full resize-y rounded-xl border border-white/10 bg-white/5 px-4 py-4 font-mono text-sm leading-7 outline-none transition focus:border-white/40"
             placeholder={`# Titolo
+              Scrivi qui il contenuto...
 
-Scrivi qui il contenuto...
-
-$$
-E = mc^2
-$$`}
+              $$
+              E = mc^2
+              $$`}
           />
 
         </div>
