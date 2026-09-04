@@ -10,6 +10,7 @@ import { Experience } from "@/sections/Experience"
 import { Contact } from "@/sections/Contact"
 
 import { NavbarAtlas } from "@/atlas/NavbarAtlas"
+import { Library } from "@/atlas/Library"
 
 import { AdminLayout } from "@/admin/AdminLayout"
 import { Dashboard } from "@/admin/Dashboard"
@@ -68,6 +69,18 @@ function App() {
               </Suspense>
             </main>
 
+          </div>
+        }
+      />
+
+      <Route
+        path="/atlas/library"
+        element={
+          <div className="min-h-screen overflow-x-hidden">
+            <NavbarAtlas />
+            <main>
+              <Library />
+            </main>
           </div>
         }
       />

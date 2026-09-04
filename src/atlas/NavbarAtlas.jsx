@@ -7,9 +7,9 @@ import { useState, useEffect } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom"
 
 const NavButton = [
-    {href: "#me", label: "Library"},
-    {href: "#creations", label: "Glossary"},
-    {href: "#archive", label: "Subscribe"},
+    {link: "/atlas/library", label: "Library"},
+    {link: "#creations", label: "Search"},
+    {link: "#archive", label: "Subscribe"},
 ] 
 
 export const NavbarAtlas= () =>{
@@ -44,12 +44,12 @@ export const NavbarAtlas= () =>{
                 
                 <div className="hidden md:flex items-center gap-6">
                     {NavButton.map((button, index) => (
-                        <a 
+                        <Link
                         key={index} 
-                        href={button.href} 
+                        to={button.link} 
                         className=" text-xl px-6 hover:text-bold hover:text-primary hover:scale-130 duration-300" >
                             {button.label}
-                        </a>
+                        </Link>
                     ))}
                 </div>
 
@@ -63,12 +63,12 @@ export const NavbarAtlas= () =>{
                 <div className="md:hidden glass absolute top-full left-6 right-6 rounded-lg">
                     <div className="container text-background flex flex-col items-center gap-4 p-4 mx-auto">
                         {NavButton.map((button, index) => (
-                            <a 
+                            <Link
                             key={index} 
-                            href={button.href} 
+                            to={button.link} 
                             className=" px-6 hover:text-bold hover:scale-130 duration-300" >
                                 {button.label}
-                            </a>
+                            </Link>
                         ))}
                     </div>
                 </div>

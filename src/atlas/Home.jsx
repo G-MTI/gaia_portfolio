@@ -84,8 +84,8 @@ export const Home = () => {
   }
 
   return (
-    <section className="min-h-screen">
-      <div className="mx-auto w-full max-w-4xl px-6 py-20">
+    <section className="min-h-screen sm:px-16 ">
+      <div className="mx-auto w-full max-w-6xl px-6 py-24 md:py-32">
 
         {/* Intro + Stats */}
         <header className="grid lg:grid-cols-2 gap-12 flex items-center mt-12 mb-20">
@@ -107,8 +107,8 @@ export const Home = () => {
             </div>
 
             {/* Articles counter */}
-            <div>
-              <div className="rounded-2xl border border-white/40 px-8 py-6">
+            <div className="flex flex-col gap-6 ">
+              <div className=" rounded-2xl border border-white/40 px-8 py-6">
                 <p className="text-4xl font-semibold">
                   {totalArticles}
                 </p>
@@ -118,7 +118,7 @@ export const Home = () => {
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-white/40 px-8 py-6 md:mt-8">
+              <div className="rounded-2xl border border-white/40 px-8 py-6">
                 <p className="text-4xl font-semibold">
                   {/*{totalExams}*/} -
                 </p>
