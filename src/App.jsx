@@ -11,6 +11,8 @@ import { Contact } from "@/sections/Contact"
 
 import { NavbarAtlas } from "@/atlas/NavbarAtlas"
 import { Library } from "@/atlas/Library"
+import { Resource } from "@/atlas/Resource"
+import { Search } from "@/atlas/Search"
 
 import { AdminLayout } from "@/admin/AdminLayout"
 import { Dashboard } from "@/admin/Dashboard"
@@ -83,6 +85,29 @@ function App() {
             </main>
           </div>
         }
+      />
+
+      <Route 
+        path="/atlas/search" 
+        element={
+          <div className="min-h-screen overflow-x-hidden">
+            <NavbarAtlas />
+            <main>
+              <Search />
+            </main>
+          </div>
+        } />
+
+      
+      <Route 
+        path="/atlas/library/:id"
+        element={
+          <div className="min-h-screen overflow-x-hidden">
+            <NavbarAtlas />
+            <main>              
+              <Resource />
+            </main>
+          </div>} 
       />
 
 

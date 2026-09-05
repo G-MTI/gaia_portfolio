@@ -27,8 +27,8 @@ export const Navbar = () =>{
 
 
     return (
-        <header className={` fixed top-0 left-0 right-0 py-6 ${isScrolled ? "glass-transparent" : "bg-transparent"} z-50`}>
-            <nav className="max-w-screen container flex items-center left-0 px-12 right-0 top-0 justify-between mx-auto">
+        <header className= "fixed top-0 left-0 right-0 z-50">
+            <nav className={` max-w-screen container flex items-center left-0 py-6 px-12 right-0 top-0 justify-between mx-auto ${isScrolled ? "glass-transparent" : "bg-transparent"} `}>
                 {/*schiaccio cambia tema sito?*/}
                 <a href="#" className="text-3xl font-bold">GM<span className="text-primary">.</span></a>
 
@@ -52,18 +52,32 @@ export const Navbar = () =>{
             </nav>
             {/*Mobile*/}
             {isOpen && (
-                <div className="md:hidden glass absolute top-full left-6 right-6 rounded-lg">
-                    <div className="container text-background flex flex-col items-center gap-4 p-4 mx-auto">
-                        {NavButton.map((button, index) => (
-                            <a 
-                            key={index} 
-                            href={button.href} 
-                            className=" px-6 hover:text-bold hover:scale-130 duration-300" >
-                                {button.label}
-                            </a>
-                        ))}
-                    </div>
+              <div className="md:hidden glass-transparent absolute left-6 right-6 top-full mt-3 overflow-hidden rounded-xl border border-white/10">
+                <div className="flex flex-col">
+                  {NavButton.map((button, index) => (
+                    <a
+                      key={button.label}
+                      href={button.href}
+                      onClick={() => setIsOpen(false)}
+                      className="group flex items-center justify-between border-b border-white/10 px-6 py-5 last:border-b-0"
+                    >
+                      <div className="flex  items-center gap-8">
+                        <span className="text-xs text-primary">
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                
+                        <span className="text-lg text-white transition-all duration-300 group-hover:translate-x-1 group-hover:scale-130 ">
+                          {button.label}
+                        </span>
+                      </div>
+                
+                      <span className="text-white transition-all duration-300 group-hover:translate-x-1 group-hover:scale-130">
+                        →
+                      </span>
+                    </a>
+                  ))}
                 </div>
+              </div>
             )}
         </header>
     )

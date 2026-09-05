@@ -41,14 +41,12 @@ const getYouTubeEmbedUrl = (url) => {
 
 const BookCard = ({ source }) => {
   return (
-    <article className="">
-      <a
-        href={source.url || "#"}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block overflow-hidden rounded-xl border border-white/10 bg-white/5"
-      >
-        <div className="aspect-[3/4] w-full overflow-hidden">
+    <Link
+      to={`/atlas/library/${source.id}`}
+      className="group block"
+    >
+      <article>
+        <div className="aspect-[3/4] w-full overflow-hidden rounded-xl border border-white/10 bg-white/5">
           {source.image_url ? (
             <img
               src={source.image_url}
@@ -64,31 +62,14 @@ const BookCard = ({ source }) => {
             </div>
           )}
         </div>
-      </a>
 
-      <div className="mt-5">
-        <h3 className="text-xl font-medium leading-snug transition group-hover:text-primary">
-          {source.title}
-        </h3>
-
-        {source.author && (
-          <p className="mt-2 text-sm text-white/50">
-            {source.author}
+        <div className="mt-4">
+          <p className="text-sm text-white/40 transition group-hover:text-primary">
+            Show resource →
           </p>
-        )}
-
-        {source.url && (
-          <a
-            href={source.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 inline-flex text-sm text-white/40 transition hover:text-white"
-          >
-            Open resource →
-          </a>
-        )}
-      </div>
-    </article>
+        </div>
+      </article>
+    </Link>
   )
 }
 
@@ -102,62 +83,54 @@ const VideoCard = ({ source }) => {
           <p className="text-sm text-white/30">
             Invalid YouTube URL
           </p>
-          {source.url && (
-          <a
-            href={source.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 inline-flex text-sm text-white/40 transition hover:text-white"
-          >
-            Open resource →
-          </a>
-        )}
         </div>
       </article>
     )
   }
 
   return (
-    <article className="overflow-hidden rounded-xl border border-white/10 bg-black">
-      <div className="aspect-video w-full">
-        <iframe
-          src={embedUrl}
-          title={source.title}
-          className="h-full w-full"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-        />
+    <article>
+      <div className="overflow-hidden rounded-xl border border-white/10 bg-black">
+        <div className="aspect-video w-full">
+          <iframe
+            src={embedUrl}
+            title={source.title}
+            className="h-full w-full"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
+        </div>
       </div>
+
+      <Link
+        to={`/atlas/library/${source.id}`}
+        className="mt-4 inline-flex text-sm text-white/40 transition hover:text-primary"
+      >
+        Show resource →
+      </Link>
     </article>
   )
 }
 
 const SimpleCard = ({ source }) => {
-  const label =
-    source.type === "paper"
-      ? "Open paper →"
-      : "Open website →"
-
   return (
-    <article className="group border-b border-white/10 py-6">
-      <div className="flex items-center justify-between gap-6">
-        <h3 className="text-xl font-medium leading-snug transition group-hover:text-primary">
-          {source.title}
-        </h3>
+    <Link
+      to={`/atlas/library/${source.id}`}
+      className="group block border-b border-white/10 py-6"
+    >
+      <article>
+        <div className="flex items-center justify-between gap-6">
+          <h3 className="text-xl font-medium leading-snug transition group-hover:text-primary">
+            {source.title}
+          </h3>
 
-        {source.url && (
-          <a
-            href={source.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="shrink-0 text-sm text-white/40 transition hover:text-white"
-          >
-            {label}
-          </a>
-        )}
-      </div>
-    </article>
+          <span className="shrink-0 text-sm text-white/40 transition group-hover:text-white">
+            →
+          </span>
+        </div>
+      </article>
+    </Link>
   )
 }
 
@@ -250,16 +223,14 @@ export const Library = () => {
         {/* Back to Atlas */}
         <Link
           to="/atlas"
-          className="inline-flex text-sm text-primary/40 transition hover:text-primary"
+          className="inline-flex text-lg text-primary transition hover:scale-130 hover:text-bold"
         >
           ← Atlas
         </Link>
 
         {/* Header */}
         <header className="mt-12 max-w-3xl">
-          <p className="mb-6 text-sm uppercase tracking-[0.2em] text-white/40">
-            Library
-          </p>
+         
 
           <h1 className="text-5xl font-semibold tracking-tight md:text-6xl">
             The resources behind the journey.

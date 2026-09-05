@@ -96,7 +96,7 @@ export const Home = () => {
               </p>
 
               <h1 className=" font-semibold tracking-tight">
-                - Road to engineer
+                Road to engineer
               </h1>
 
               <p className="mt-6 text-lg leading-8 text-white/70">
