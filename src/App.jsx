@@ -20,6 +20,7 @@ import { Login } from "@/admin/Login"
 import { ProtectedRoute } from "@/admin/ProtectedRoute"
 import { Articles } from "@/admin/Articles"
 import { ArticleEditor } from "@/admin/ArticleEditor"
+import { Sources } from "@/admin/Sources"
 
 // Carichiamo Atlas solo quando serve
 const Home = lazy(() => import("@/atlas/Home").then(module => ({
@@ -175,7 +176,15 @@ function App() {
             <ArticleEditor />
           }/>
 
+          <Route 
+          path="sources"
+          element={
+            <Sources />
+          } />
+
         </Route>
+
+
       </Route>
 
     </Routes>
