@@ -8,6 +8,7 @@ import { Me } from "@/sections/Me"
 import { Creations } from "@/sections/Creations"
 import { Experience } from "@/sections/Experience"
 import { Contact } from "@/sections/Contact"
+import { Footer } from "@/components/Footer"
 
 import { NavbarAtlas } from "@/atlas/NavbarAtlas"
 import { Library } from "@/atlas/Library"
@@ -51,6 +52,8 @@ function App() {
               <Creations />
               <Experience />
               <Contact />
+              <Footer />
+
             </main>
           </div>
         }
@@ -69,6 +72,7 @@ function App() {
             <main>
               <Suspense fallback={<p>Loading...</p>}>
                 <Home />
+                <Footer />
               </Suspense>
             </main>
 
@@ -84,6 +88,7 @@ function App() {
             <main>
               <Library />
             </main>
+            <Footer />
           </div>
         }
       />
@@ -95,7 +100,9 @@ function App() {
             <NavbarAtlas />
             <main>
               <Search />
+              
             </main>
+            <Footer />
           </div>
         } />
 
@@ -107,7 +114,9 @@ function App() {
             <NavbarAtlas />
             <main>              
               <Resource />
+              
             </main>
+            <Footer />
           </div>} 
       />
 
@@ -124,7 +133,9 @@ function App() {
             <main>
               <Suspense fallback={<p>Loading...</p>}>
                 <Article />
+                <Footer />
               </Suspense>
+
             </main>
 
           </div>
