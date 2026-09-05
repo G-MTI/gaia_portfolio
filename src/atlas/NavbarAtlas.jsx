@@ -66,9 +66,9 @@ export const NavbarAtlas= () =>{
               <div className="md:hidden glass-transparent absolute left-6 right-6 top-full mt-3 overflow-hidden rounded-xl border border-white/10">
                 <div className="flex flex-col">
                   {NavButton.map((button, index) => (
-                    <a
+                    <Link
                       key={button.label}
-                      href={button.href}
+                      to={button.link}
                       onClick={() => setIsOpen(false)}
                       className="group flex items-center justify-between border-b border-white/10 px-6 py-5 last:border-b-0"
                     >
@@ -85,7 +85,7 @@ export const NavbarAtlas= () =>{
                       <span className="text-white transition-all duration-300 group-hover:translate-x-1 group-hover:scale-130">
                         →
                       </span>
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>
