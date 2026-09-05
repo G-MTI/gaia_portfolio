@@ -7,6 +7,7 @@ import { supabase } from "@/lib/supabase"
 import ReactMarkdown from "react-markdown"
 import remarkMath from "remark-math"
 import rehypeKatex from "rehype-katex"
+import rehypeRaw from "rehype-raw"
 import "katex/dist/katex.min.css"
 
 export const Article = () => {
@@ -265,7 +266,8 @@ export const Article = () => {
 
           <ReactMarkdown
             remarkPlugins={[remarkMath]}
-            rehypePlugins={[rehypeKatex]}
+            rehypePlugins={[rehypeRaw, rehypeKatex]}
+
             components={{
 
               h1: ({ children }) => (
