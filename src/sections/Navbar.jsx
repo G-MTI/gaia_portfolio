@@ -5,7 +5,7 @@ import { X } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const NavButton = [
-    {href: "#me", label: "Me"},
+    {href: "#me", label: "About Me"},
     {href: "#creations", label: "Creations"},
 ] 
 
