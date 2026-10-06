@@ -5,7 +5,7 @@ import { GitGraph } from "lucide-react"
 const creations = [
     {
         title:"FinanceDashboard",
-        link:"[https://finance-dashboard-theta-mocha.vercel.app/](https://finance-dashboard-theta-mocha.vercel.app/)",
+        link:"https://finance-dashboard-theta-mocha.vercel.app/",
         githubLink: "[https://github.com/G-MTI/financeDashboard](https://github.com/G-MTI/financeDashboard)",
         description: "A web app to track income and expenses and to visualize them with charts.",
         image: "/creations/financeDashboard.png",
@@ -13,7 +13,7 @@ const creations = [
     },
     {
         title:"SMABacktest",
-        link:"[https://smabacktest.streamlit.app/](https://smabacktest.streamlit.app/)",
+        link:"https://smabacktest.streamlit.app/",
         githubLink: "[https://github.com/G-MTI/smabacktest](https://github.com/G-MTI/smabacktest)",
         description: "A web application built with Streamlit that allows users to backtest a simple moving average (SMA) trading strategy on historical stock data.",
         image: "/creations/SMA.png",
@@ -21,7 +21,7 @@ const creations = [
     },
     {
         title:"Cicly",
-        link:"[https://g-mti.github.io/cicly/index.html](https://g-mti.github.io/cicly/index.html)",
+        link:"https://g-mti.github.io/cicly/index.html",
         githubLink: "[https://github.com/G-MTI/cicly](https://github.com/G-MTI/cicly)",
         description: "An educational website designed to provide clear, friendly, and accessible information about the menstrual cycle. This was the first time I built something entirely from scratch.",
         image: "/creations/Cicly.png",
@@ -29,7 +29,7 @@ const creations = [
     },
     {
         title:"Librify",
-        link:"[https://g-mti.github.io/Librify/index.html](https://g-mti.github.io/Librify/index.html)",
+        link:"https://g-mti.github.io/Librify/index.html",
         githubLink: "[https://github.com/G-MTI/librify](https://github.com/G-MTI/librify)",
         description: "A library management system designed to provide a simple and efficient way to track and organize your books",
         image: "/creations/Librify.png",
@@ -37,7 +37,7 @@ const creations = [
     },
     {
         title:"Mito della Velocità",
-        link:"[https://g-mti.github.io/MitoDellaVelocita/](https://g-mti.github.io/MitoDellaVelocita/)",
+        link:"https://g-mti.github.io/MitoDellaVelocita/",
         githubLink: "[https://github.com/G-MTI/MitoDellaVelocita](https://github.com/G-MTI/MitoDellaVelocita)", 
         description: "My first website, created for an Italian Air Force competition, thanks to this site my school ranked third.",
         image: "/creations/mitoVelocita.png",
@@ -45,7 +45,7 @@ const creations = [
     },
     {
         title:"CompoundInterestCalculator",
-        link:"[https://g-mti.github.io/CompoundInterestCalculator/calculator.html](https://g-mti.github.io/CompoundInterestCalculator/calculator.html)",
+        link:"https://g-mti.github.io/CompoundInterestCalculator/calculator.html",
         githubLink: "[https://github.com/G-MTI/CompoundInterestCalculator](https://github.com/G-MTI/CompoundInterestCalculator)",
         description: "A simple compound interest calculator, it allows users to calculate the future value of an investment based on specified parameters.",
         image: "/creations/CIC.png",
